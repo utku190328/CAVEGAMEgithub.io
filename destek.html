@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Destek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .support-hero {
+            background: linear-gradient(135deg, var(--lighter) 0%, var(--primary) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .support-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .support-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .support-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        @media (min-width: 992px) {
+            .support-container {
+                grid-template-columns: 300px 1fr;
+            }
+        }
+
+        .support-sidebar {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .support-sidebar h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .support-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .support-nav li {
+            margin-bottom: 15px;
+        }
+
+        .support-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .support-nav a:hover, .support-nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .support-nav i {
+            font-size: 18px;
+        }
+
+        .support-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(125, 216, 176, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .info-card a:hover {
+            color: var(--dark);
+        }
+
+       /* div ortalama */
+        .support-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .support-content {
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+    @media (min-width: 992px) {
+        .support-container {
+            padding: 60px 20px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="index.html">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html">HABERLER</a>
+                <a href="hakkimizda.html">HAKKIMIZDA</a>
+                <a href="destek.html" class="active">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="support-hero">
+        <div class="container">
+            <h1>Size Nasıl Yardımcı Olabiliriz?</h1>
+            <p>CAVEGAME destek ekibi olarak her türlü soru, sorun ve öneriniz için buradayız. Aşağıdaki seçeneklerden size en uygun olanı seçerek bize ulaşabilirsiniz.</p>
+        </div>
+    </section>
+        <div class="support-content">
+            <section id="sss" class="faq-section">
+                <h2>Sık Sorulan Sorular</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Siparişimi nasıl takip edebilirim?</div>
+                    <div class="faq-answer">
+                        <p>Siparişinizi takip etmek için "Hesabım" bölümünden "Siparişlerim" sekmesine gidebilirsiniz. Ayrıca sipariş onay e-postasında bulunan takip numarası ile sipariş durumunu kontrol edebilirsiniz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Ürün kodumu nasıl alabilirim?</div>
+                    <div class="faq-answer">
+                        <p>Satın aldığınız ürünün kodu, siparişin tamamlanmasının ardından "Hesabım > Siparişlerim" bölümünde görüntülenir. Ayrıca sipariş onay e-postası ile de ürün kodunuz size iletilir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Hangi ödeme yöntemlerini kabul ediyorsunuz?</div>
+                    <div class="faq-answer">
+                        <p>Kredi/banka kartı, PayPal, mobil ödeme ve banka havalesi gibi çeşitli ödeme yöntemlerini kabul ediyoruz. Tüm ödeme işlemleri SSL sertifikası ile güvence altındadır.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Ürün iade politikası nedir?</div>
+                    <div class="faq-answer">
+                        <p>Dijital ürünlerin doğası gereği, aktifleştirilmiş ürünlerde iade kabul edemiyoruz. Ancak aktifleştirilmemiş ve orijinal paketi bozulmamış ürünler için 14 gün içinde iade talebinde bulunabilirsiniz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Hesabımı nasıl silebilirim?</div>
+                    <div class="faq-answer">
+                        <p>Hesabınızı silmek için destek ekibimizle iletişime geçmeniz gerekmektedir. "İletişim Formu" aracılığıyla hesap silme talebinizi iletebilirsiniz.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="iletisim" class="contact-form">
+                <h2>Bize Ulaşın</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Konu</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">Bir konu seçiniz</option>
+                            <option value="siparis">Sipariş Sorgulama</option>
+                            <option value="urun">Ürün Aktifleştirme</option>
+                            <option value="iptal">İade/İptal Talebi</option>
+                            <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gönder</button>
+                </form>
+            </section>
+
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-posta</h3>
+                    <p><a href="mailto:destek@cavegame.com">destek@cavegame.com</a></p>
+                    <p>En geç 24 saat içinde yanıt verilir</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+905511195586">0551 119 55 86</a></p>
+                    <p>Hafta içi 09:00 - 18:00</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Canlı Destek</h3>
+                    <p>Canlı sohbet ile anında destek</p>
+                    <p>Hafta içi 09:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        //soru sorabilmeleri için
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                question.classList.toggle('active');
+                answer.classList.toggle('show');
+                
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

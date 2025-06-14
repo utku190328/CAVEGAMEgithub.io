@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Hakkımızda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--lighter) 0%, var(--primary) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .mission-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mission-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .team-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px 20px;
+        }
+
+        .member-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .member-info p {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="index.html">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html">HABERLER</a>
+                <a href="hakkimizda.html" class="active">HAKKIMIZDA</a>
+                <a href="destek.html">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>Oyun Dünyasında Yeni Bir Soluk</h1>
+            <p>CAVEGAME olarak 2025'ten beri oyun severlere kaliteli hizmet sunmanın gururunu yaşıyoruz. Güvenilir
+                alışverişin adresi olarak, her geçen gün büyüyen ailemize katılan herkese teşekkür ederiz.</p>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title"><span>Misyonumuz ve Değerlerimiz</span></h2>
+
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Yenilikçi Yaklaşım</h3>
+                    <p>Oyun dünyasındaki son trendleri takip ederek, müşterilerimize en güncel ve kaliteli ürünleri
+                        sunuyoruz.</p>
+                </div>
+
+                <div class="mission-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Güvenli Alışveriş</h3>
+                    <p>%100 güvenli ödeme sistemleri ve SSL sertifikası ile alışverişlerinizi güvence altına alıyoruz.
+                    </p>
+                </div>
+
+                <div class="mission-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Sosyal Sorumluluk</h3>
+                    <p>Her satışımızda doğaya ve hayvanlara destek olarak daha yaşanabilir bir dünya için çalışıyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title"><span>Ekibimiz</span></h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">CAVEGAME ailesi olarak, tutkulu ve
+                deneyimli ekibimizle sizlere en iyi hizmeti sunmak için çalışıyoruz.</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./photos/team/emre.jpg" alt="Emre Aksoğan">
+                    </div>
+                    <div class="member-info">
+                        <h3>Emre Aksoğan</h3>
+                        <p>Web | Front-end</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/emre-akso%C4%9Fan-204a8a186/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/aksgnemre0/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./photos/team/kutay.jpg" alt="Kutay Ada Öz">
+                    </div>
+                    <div class="member-info">
+                        <h3>Kutay Ada Öz</h3>
+                        <p>Veritabanı</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/kutayada0/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./photos/team/utku.jpg" alt="Utku Oral">
+                    </div>
+                    <div class="member-info">
+                        <h3>Utku Oral</h3>
+                        <p>Web | Back-end</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="./photos/team/eren.jpg" alt="eren">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mehmet Eren Demirci</h3>
+                        <p>Minigames</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2 style="font-size: 32px; margin-bottom: 20px;">CAVEGAME ile Rakamlarla</h2>
+            <p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">Sizlerin desteğiyle her
+                geçen gün büyüyor ve daha fazla oyun severi mutlu etmek için çalışıyoruz.</p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>462+</h2>
+                    <p>Mutlu Müşteri</p>
+                </div>
+
+                <div class="stat-item">
+                    <h2>8+</h2>
+                    <p>Farklı Oyun</p>
+                </div>
+
+                <div class="stat-item">
+                    <h2>7/24</h2>
+                    <p>Canlı Destek</p>
+                </div>
+
+                <div class="stat-item">
+                    <h2>17</h2>
+                    <p>Bağışlanan Fidan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

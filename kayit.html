@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Kayıt Ol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .auth-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .auth-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .auth-form input, .auth-form select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .auth-form button:hover {
+            background-color: var(--dark);
+        }
+        
+        .auth-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .auth-links a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .success-message {
+            color: var(--primary);
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="index.html">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html">HABERLER</a>
+                <a href="hakkimizda.html">HAKKIMIZDA</a>
+                <a href="destek.html">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-banner" style="padding: 30px 0;">
+        <div class="container">
+            <h1 style="text-align: center; margin: 0;">Yeni Hesap Oluşturun</h1>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="auth-container">
+            <h2 class="auth-title">Kayıt Ol</h2>
+            <form class="auth-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Ad</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Soyad</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" required minlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthDate">Doğum Tarihi</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="securityQuestion">Güvenlik Sorusu</label>
+                    <select id="securityQuestion" required>
+                        <option value="">Bir soru seçin</option>
+                        <option value="İlk okuldaki öğrenci numaran?">İlk okuldaki öğrenci numaran?</option>
+                        <option value="En sevdiğin müzik grubu?">En sevdiğin müzik grubu?</option>
+                        <option value="En yakın arkadaşının ismi nedir?">En yakın arkadaşının ismi nedir?</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="securityAnswer">Güvenlik Sorusu Cevabı</label>
+                    <input type="text" id="securityAnswer" required>
+                </div>
+                
+                <button type="submit">Kayıt Ol</button>
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+            </form>
+            <div class="auth-links">
+                <a href="giris.html">Zaten hesabınız var mı? Giriş Yapın</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                birthDate: document.getElementById('birthDate').value,
+                securityQuestion: document.getElementById('securityQuestion').value,
+                securityAnswer: document.getElementById('securityAnswer').value,
+                registrationDate: new Date().toISOString(),
+                cart: []
+            };
+            
+            const result = registerUser(userData);
+            
+            if (result.success) {
+                document.getElementById('errorMessage').textContent = '';
+                document.getElementById('successMessage').textContent = 'Kayıt başarılı! Giriş yapılıyor...';
+                
+                // Otomatik giriş yap
+                setTimeout(() => {
+                    loginUser(userData.username, userData.password);
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                document.getElementById('errorMessage').textContent = result.message;
+                document.getElementById('successMessage').textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

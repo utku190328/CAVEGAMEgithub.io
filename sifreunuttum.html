@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Şifremi Unuttum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .auth-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .auth-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .auth-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .auth-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .auth-form button:hover {
+            background-color: var(--dark);
+        }
+        
+        .auth-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .auth-links a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .success-message {
+            color: var(--primary);
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .step {
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="index.html">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html">HABERLER</a>
+                <a href="hakkimizda.html">HAKKIMIZDA</a>
+                <a href="destek.html">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-banner" style="padding: 30px 0;">
+        <div class="container">
+            <h1 style="text-align: center; margin: 0;">Şifremi Unuttum</h1>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="auth-container">
+            <h2 class="auth-title">Şifre Sıfırlama</h2>
+            
+            <form class="auth-form" id="forgotPasswordForm">
+                <!-- Adım 1: E-posta ve güvenlik sorusu -->
+                <div class="step active" id="step1">
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <button type="button" id="nextBtn">İleri</button>
+                    <div id="step1Error" class="error-message"></div>
+                </div>
+                
+                <!-- Adım 2: Güvenlik sorusu cevabı -->
+                <div class="step" id="step2">
+                    <div class="form-group">
+                        <label id="securityQuestionLabel"></label>
+                        <input type="text" id="securityAnswer" required>
+                    </div>
+                    <button type="button" id="verifyBtn">Doğrula</button>
+                    <div id="step2Error" class="error-message"></div>
+                </div>
+                
+                <!-- Adım 3: Yeni şifre -->
+                <div class="step" id="step3">
+                    <div class="form-group">
+                        <label for="newPassword">Yeni Şifre</label>
+                        <input type="password" id="newPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Yeni Şifre (Tekrar)</label>
+                        <input type="password" id="confirmPassword" required minlength="6">
+                    </div>
+                    <button type="submit">Şifreyi Değiştir</button>
+                    <div id="step3Error" class="error-message"></div>
+                    <div id="successMessage" class="success-message"></div>
+                </div>
+            </form>
+            
+            <div class="auth-links">
+                <a href="giris.html">Giriş Sayfasına Dön</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let currentUser = null;
+        
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            const users = JSON.parse(localStorage.getItem('cavegame_users')) || [];
+            const user = users.find(u => u.email === email);
+            
+            if (!user) {
+                document.getElementById('step1Error').textContent = 'Bu e-posta ile kayıtlı kullanıcı bulunamadı';
+                return;
+            }
+            
+            currentUser = user;
+            document.getElementById('securityQuestionLabel').textContent = user.securityQuestion;
+            
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('step1Error').textContent = '';
+        });
+        
+        document.getElementById('verifyBtn').addEventListener('click', function() {
+            const answer = document.getElementById('securityAnswer').value;
+            
+            if (answer !== currentUser.securityAnswer) {
+                document.getElementById('step2Error').textContent = 'Güvenlik sorusunun cevabı yanlış';
+                return;
+            }
+            
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+            document.getElementById('step2Error').textContent = '';
+        });
+        
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (newPassword !== confirmPassword) {
+                document.getElementById('step3Error').textContent = 'Şifreler uyuşmuyor';
+                return;
+            }
+            
+            const result = resetPassword(currentUser.email, currentUser.securityAnswer, newPassword);
+            
+            if (result.success) {
+                document.getElementById('step3Error').textContent = '';
+                document.getElementById('successMessage').textContent = 'Şifreniz başarıyla değiştirildi. Giriş yapabilirsiniz.';
+                
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            } else {
+                document.getElementById('step3Error').textContent = result.message;
+            }
+        });
+    </script>
+</body>
+</html>

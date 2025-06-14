@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Oyun Satış</title>
+    <link rel="stylesheet" href="style.css"> <!--style.css de oluşturmuş olduğumuz designlar için-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Burası sayfada kullanılan iconlar için.-->
+</head>
+
+<body>
+    <nav class="top-nav"> <!--Menü içerikleri kısmı için-->
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="#" class="active">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html">HABERLER</a>
+                <a href="hakkimizda.html">HAKKIMIZDA</a>
+                <a href="destek.html">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="giris.html"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-banner"> <!--Bilgi kartları için.-->
+        <div class="container" img src="./photos/kapak.png">
+            <div class="hero-content">
+                <h1>Neden Bizi Tercih Etmelisin?</h1>
+                <h3>✅ Güvenli ve hızlı alışveriş</h3>
+                <h3>✅ Uygun fiyatlar ve özel indirimler.</h3>
+                <h3>✅ Sosyal sorumluluk sahibi ekip ve müşteriler.</h3>
+                <h3>✅ Geniş oyun yelpazesi (LoL, Valorant, PUBG ve daha fazlası)</h3>
+                <h3>✅ 7/24 canlı destek</h3>
+            </div>
+            <div class="hero-image">
+                <img src="./photos/kapak.png">
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-section">
+        <div class="container">
+            <div class="promo-card" style="background-color: #72c5a1;">
+                <i class="fas fa-money-bill"></i>
+                <h3>Ödeme Güvencesi</h3>
+                <p>Değerli müşterilerimiz sizleri önemsizyoruz bu yüzden Kişisel verilerinizi ve Ödeme bilgilerinizi en
+                    iyi şekilde koruyoruz.</p>
+            </div>
+            <div class="promo-card" style="background-color: #69925c;">
+                <i class="fas fa-paw"></i>
+                <h3>Dostlarımıza Destek</h3>
+                <p>Siz sipariş verdikçe, biz bir patiye umut oluyoruz. Bu yüzden 100 TL ve üzeri her 7 siparişinizde,
+                    hayvan barınaklarına sizin adınıza mama bağışı yapıyoruz. Desteklerinizle daha fazla dostumuz
+                    güvende. </p>
+            </div>
+            <div class="promo-card" style="background-color: #6bb169;">
+                <i class="fas fa-tree"></i>
+                <h3>Ormanlara Destek</h3>
+                <p>Siz sipariş verdikçe, biz doğayı yeşertiyoruz. Daha yaşanabilir bir gelecek adına 100 TL ve üzeri her
+                    10 siparişiniz için TEMA Vakfı’na sizin adınıza bir fidan bağışlıyoruz. Birlikte daha yeşil bir
+                    gelecek mümkün.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content"> <!--Vitrin kısmı için.-->
+        <h2 class="section-title"><span>Popüler olanlar</span></h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./photos/ml/177.png" alt="mobile-legends">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">MOONTON</span>
+                    <h3 class="product-name"> Mobile Legends 177 Elmas</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="product-price">₺177.77</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Yalnızca Türkiye için geçerlidir.</p>
+                    <button class="add-to-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./photos/valorant/vp1000.png" alt="Valorant 1000 VP">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Riot Games</span>
+                    <h3 class="product-name">Valorant Points 1000 VP</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="product-price">₺249.99</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Yalnızca Türkiye için geçerlidir.</p>
+                    <button class="add-to-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./photos/lol/1380.png" alt="lol">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Riot Games</span>
+                    <h3 class="product-name">League of Legends 1380 RP</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="product-price">₺239.99</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Yalnızca Türkiye için geçerlidir.</p>
+                    <button class="add-to-cart">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="./photos/roblox/1200.png" alt="roblox">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Roblox Corporation</span>
+                    <h3 class="product-name">Roblox 1200 Robux</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="product-price">₺109.99</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Yalnızca Türkiye için geçerlidir.</p>
+                    <button class="add-to-cart">Sepete Ekle</button>
+                </div>
+            </div>
+    </main>
+
+    <section class="newsletter"> <!--ALT KISIMDAKİ BİLGİLERİMİZ.-->
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

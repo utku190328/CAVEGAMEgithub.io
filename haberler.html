@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVEGAME | Oyun Haberleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Haber kartları için özel stil */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--dark);
+        }
+
+        .news-category {
+            display: inline-block;
+            background-color: var(--light);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* Haber filtreleme */
+        .news-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dice"></i> CAVEGAME
+            </div>
+            <div class="menu">
+                <a href="index.html">ANASAYFA</a>
+                <a href="oyunlar.html">OYUNLAR</a>
+                <a href="minigames.html">MİNİGAMES</a>
+                <a href="haberler.html" class="active">HABERLER</a>
+                <a href="hakkimizda.html">HAKKIMIZDA</a>
+                <a href="destek.html">DESTEK</a>
+            </div>
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-user"></i> Giriş Yap</a>
+                <a href="sepet.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-banner" style="padding: 50px 0;">
+        <div class="container">
+            <h1 style="text-align: center; margin: 0; font-size: 36px;">Oyun ve Teknoloji Dünyasından Son Haberler</h1>
+        </div>
+    </section>
+
+    <main class="container main-content">
+
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/gta6.jpg" alt="GTA 6">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Konsol</span>
+                    <h3 class="news-title">GTA 6 Resmi Olarak Duyuruldu: İşte Beklentiler</h3>
+                    <p class="news-excerpt">Rockstar Games, uzun süredir beklenen GTA 6'nın ilk fragmanını yayınladı. Oyunun 2025'te piyasaya sürülmesi bekleniyor.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/valorant-champions.jpg" alt="Valorant Champions">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">E-Spor</span>
+                    <h3 class="news-title">Valorant Champions 2025'te Şampiyon Belli Oldu</h3>
+                    <p class="news-excerpt">Valorant Champions 2025 turnuvasında FNATIC, finalde Paper Rex'i 3-1 mağlup ederek şampiyon oldu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/iphone16-gaming.jpg" alt="iPhone 16 Gaming">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Mobil</span>
+                    <h3 class="news-title">iPhone 16 Pro ile Oyun Deneyimi Bir Üst Seviyeye Çıkıyor</h3>
+                    <p class="news-excerpt">Apple'ın yeni iPhone 16 Pro modelleri, gelişmiş grafik performansıyla konsol kalitesinde oyun deneyimi sunuyor.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/ps5-slim.jpg" alt="PS5 Slim">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Konsol</span>
+                    <h3 class="news-title">PS5 Slim Resmen Duyuruldu: Özellikler ve Fiyat</h3>
+                    <p class="news-excerpt">Sony, daha ince ve hafif PS5 modelini duyurdu. Yeni model %30 daha küçük ve harici disk sürücü desteği sunuyor.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/league-worlds.jpg" alt="League Worlds">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">E-Spor</span>
+                    <h3 class="news-title">LoL Dünya Şampiyonası'nda T1 Şampiyon Oldu</h3>
+                    <p class="news-excerpt">League of Legends Dünya Şampiyonası'nda T1, Weibo Gaming'i 3-0 mağlup ederek dördüncü şampiyonluğunu kazandı.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/starfield.jpg" alt="Starfield">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">Starfield İlk 10 Günde 10 Milyon Oyuncuya Ulaştı</h3>
+                    <p class="news-excerpt">Bethesda'nın uzun zamandır beklenen uzay RPG'si Starfield, çıkışının ilk 10 gününde 10 milyon oyuncuya ulaşarak rekor kırdı.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/mobile-legends-update.jpg" alt="Mobile Legends Update">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Mobil</span>
+                    <h3 class="news-title">Mobile Legends Yeni Harita ve Kahraman ile Güncellendi</h3>
+                    <p class="news-excerpt">Mobile Legends: Bang Bang, büyük bir güncelleme aldı. Yeni harita, mekanikler ve kahraman oyuncuların beğenisine sunuldu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/xbox-game-pass.jpg" alt="Xbox Game Pass">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Konsol</span>
+                    <h3 class="news-title">Xbox Game Pass'e Kasım Ayında Gelecek Oyunlar Açıklandı</h3>
+                    <p class="news-excerpt">Microsoft, Xbox Game Pass aboneleri için kasım ayında hizmete eklenecek oyunları duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/nvidia-rtx.jpg" alt="Nvidia RTX">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Teknoloji</span>
+                    <h3 class="news-title">Nvidia Yeni RTX 4090 OC Edition 24GB Serisi Ekran Kartlarını Tanıttı</h3>
+                    <p class="news-excerpt">Nvidia, DLSS 3.5 teknolojisiyle birlikte gelen yeni RTX 4090 OC Edition 24GB serisi ekran kartlarını resmen duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/pubg-new-map.jpg" alt="PUBG New Map">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">PUBG: Yeni Harita "Rondo" Geliyor</h3>
+                    <p class="news-excerpt">PUBG'nin yeni haritası Rondo'nun detayları belli oldu. 8x8 km boyutlarındaki harita Asya temalı olacak.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/roblox-ai.jpg" alt="Roblox AI">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Teknoloji</span>
+                    <h3 class="news-title">Roblox, Yapay Zeka Destekli Yeni Araçlarını Tanıttı</h3>
+                    <p class="news-excerpt">Roblox, kullanıcıların yapay zeka yardımıyla daha kolay içerik oluşturabilmesi için yeni araçlarını duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/cod-modern-warfare3.jpg" alt="COD MW3">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Konsol</span>
+                    <h3 class="news-title">Call of Duty: Modern Warfare 3 Çıkış Tarihi ve Özellikleri</h3>
+                    <p class="news-excerpt">Activision, Call of Duty: Modern Warfare 3'ün çıkış tarihini ve oyun içi özelliklerini resmen açıkladı.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/fortnite-chapter5.jpg" alt="Fortnite Chapter 5">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">Fortnite Chapter 5: Yeni Sezon ve Özellikler</h3>
+                    <p class="news-excerpt">Fortnite'ın yeni bölümü Chapter 5, oyuna birçok yenilik getiriyor. İşte yeni harita, silahlar ve mekanikler...</p>
+                </div>
+            </div>
+
+            <!-- Haber 14 -->
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/steam-deck-oled.jpg" alt="Steam Deck OLED">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Teknoloji</span>
+                    <h3 class="news-title">Valve, OLED Ekranlı Yeni Steam Deck Duyurdu</h3>
+                    <p class="news-excerpt">Valve, geliştirilmiş pil ömrü ve OLED ekranla gelen yeni Steam Deck modelini duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/elden-ring-dlc.jpg" alt="Elden Ring DLC">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">Elden Ring'in İlk DLC'si "Shadow of the Erdtree" Geliyor</h3>
+                    <p class="news-excerpt">FromSoftware, Elden Ring için ilk büyük DLC paketinin adını ve çıkış tarihini açıkladı.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/valorant-new-agent.jpg" alt="Valorant New Agent">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">E-Spor</span>
+                    <h3 class="news-title">Valorant'a Yeni Ajan "Harbor" Eklendi</h3>
+                    <p class="news-excerpt">Riot Games, Valorant'ın yeni ajanı "Harbor"ı duyurdu. Su temalı yetenekleriyle dikkat çeken ajan oyuna eklendi.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/switch2.jpg" alt="Nintendo Switch 2">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Konsol</span>
+                    <h3 class="news-title">Nintendo Switch 2 İçin İlk Detaylar Sızdı</h3>
+                    <p class="news-excerpt">Nintendo'nun yeni konsolu Switch 2 ile ilgili ilk teknik detaylar sızdırıldı.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/overwatch2-pve.jpg" alt="Overwatch 2 PvE">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">Overwatch 2'nin Beklenen PvE Modu İptal Edildi</h3>
+                    <p class="news-excerpt">Blizzard, Overwatch 2 için planlanan büyük PvE modunun iptal edildiğini duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/apple-arcade.jpg" alt="Apple Arcade">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">Mobil</span>
+                    <h3 class="news-title">Apple Arcade'e 20 Yeni Oyun Eklendi</h3>
+                    <p class="news-excerpt">Apple, abonelik hizmeti Apple Arcade'e 20 yeni oyun eklediğini duyurdu.</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="./photos/news/cyberpunk-update.jpg" alt="Cyberpunk Update">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">PC</span>
+                    <h3 class="news-title">Cyberpunk 2077: Phantom Liberty İncelemeleri Geldi</h3>
+                    <p class="news-excerpt">Cyberpunk 2077'ın büyük güncellemesi ve DLC'si Phantom Liberty için ilk incelemeler yayınlandı.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Siz oyuna ara verseniz de, iyiliğiniz devam eder.</h2>
+            <h5>NGame Bilişim LTD.</h5>
+            <h5>Bilgi: info@cavegame.com - Yardım merkezi: destek@cavegame.com </h5>
+            <h5>Tel: 09.00 - 18.00 / 0551 119 55 86</h5>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
